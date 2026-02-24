@@ -3,11 +3,13 @@ use mini_redis::{Connection, Frame};
 use std::sync::{Arc, Mutex};
 use bytes::Bytes;
 use std::collections::HashMap;
+use console_subscriber;
 
 type Db = Arc<Mutex<HashMap<String, Bytes>>>;
 
 #[tokio::main]
 async fn main() {
+    console_subscriber::init();
     let listener = TcpListener::bind("127.0.0.1:6379").await.unwrap();
 
     println!("Listening");

@@ -1,0 +1,7 @@
+
+
+server:
+    RUSTFLAGS="--cfg tokio_unstable" cargo run --bin server
+
+client:
+    RUSTFLAGS="--cfg tokio_unstable" cargo run --bin client
